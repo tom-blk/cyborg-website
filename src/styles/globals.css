@@ -1502,8 +1502,9 @@ filter: blur(75px);
 .toggle-menu.active span:last-child{
   transform: rotate(-45deg) translate(5px, -5px);
 }
-
-
+.headline,.testimonial-section, .partners-section{
+  display: none;
+}
 
 
 
@@ -1532,8 +1533,6 @@ filter: blur(75px);
     margin-top: -48px;
 }
 }
-
-
 @media(max-width: 1199px){
   .hero-heading {
     font-size: 46px;

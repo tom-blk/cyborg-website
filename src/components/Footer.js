@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Linkedin from './icons/Linkedin'
 import Twitter from './icons/Twitter'
 import Telegram from './icons/Telegram'
-import Medium from './icons/Medium'
+// import Medium from './icons/Medium'
 import ArrowRight from './icons/ArrowRight'
 import { useRouter } from 'next/router'
 
@@ -31,10 +31,10 @@ const Footer = () => {
             <Logo/>
             <p className='fw-desc'>Our innovative platform leverages blockchain technology to revolutionize edge computing, offering a secure and scalable infrastructure designed to meet computing needs of the future.</p>
             <ul className='social'>
-                <li><Link href="/"><Twitter/></Link></li>
+                <li><Link href="https://twitter.com/Cyborg_network_"><Twitter/></Link></li>
                 <li><Link href="https://in.linkedin.com/company/cyborg-network"><Linkedin/></Link></li>
                 <li><Link href="https://t.me/CyborgNetworkOfficial"><Telegram/></Link></li>
-                <li><Link href="/"><Medium/></Link></li>
+                {/* <li><Link href="/"><Medium/></Link></li> */}
             </ul>
             </div>
             <div className='fw-content fw-second'>
@@ -51,8 +51,8 @@ const Footer = () => {
             <div className='content-wrap'>
                 <h6 className='fw-head'>Information</h6>
                 <ul className='fw-link'>
-                    <li><Link href="/">One Pager</Link></li>
-                    <li><Link href="/">Lite Paper</Link></li>
+                    <li><Link href="/docs/cyborg-one-pager.pdf" target='_blank'>One Pager</Link></li>
+                    <li><Link href="/docs/cyborg-lite-paper-v1.pdf" target='_blank'>Lite Paper</Link></li>
                     <li><Link href="/about#faq">FAQ</Link></li>
                     {/* <li><Link href="/privacy-policy" className={`${router.asPath === "/privacy-policy" ? "active" : ""}`}>Privacy Policy</Link></li> */}
                     {/* <li><Link href="/term-of-use" className={`${router.asPath === "/term-of-use" ? "active" : ""}`}>Term of Use</Link></li> */}

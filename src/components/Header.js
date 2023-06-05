@@ -28,8 +28,8 @@ const Header = () => {
                     <div className='clip-wrap'>
                     <div className='box-clip clip-border'></div>
                     <ul>
-                        <li onClick={()=>setToggle(!toggle)}><Link href="/">One Pager</Link></li>
-                        <li onClick={()=>setToggle(!toggle)}><Link href="/">Lite Paper</Link></li>
+                        <li onClick={()=>setToggle(!toggle)}><Link href="/docs/cyborg-one-pager.pdf" target='_blank'>One Pager</Link></li>
+                        <li onClick={()=>setToggle(!toggle)}><Link href="/docs/cyborg-lite-paper-v1.pdf" target='_blank'>Lite Paper</Link></li>
                     </ul>
                     </div>
                     </div>

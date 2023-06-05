@@ -25,7 +25,7 @@ import Link from 'next/link'
 import Linkedin from '../components/icons/Linkedin'
 import Twitter from '../components/icons/Twitter'
 import Telegram from '../components/icons/Telegram'
-import Medium from '../components/icons/Medium'
+// import Medium from '../components/icons/Medium'
 import ExternalLink from '@/components/icons/ExternalLink'
 import { useState } from 'react'
 
@@ -320,10 +320,10 @@ export default function Home() {
             <span onClick={popupClose}><Close/></span>
               <h2 className='nm-head'>Connect With Us</h2>
               <ul className='social'>
-                <li><Link href="/"><Twitter/></Link></li>
+                <li><Link href="https://twitter.com/Cyborg_network_"><Twitter/></Link></li>
                 <li><Link href="https://in.linkedin.com/company/cyborg-network"><Linkedin/></Link></li>
                 <li><Link href="https://t.me/CyborgNetworkOfficial"><Telegram/></Link></li>
-                <li><Link href="/"><Medium/></Link></li>
+                {/* <li><Link href="/"><Medium/></Link></li> */}
             </ul>
             <div className='lm-divide'>
                 <p>Documents</p>
@@ -336,9 +336,9 @@ export default function Home() {
                 <div className='ll-box'>
                   <div className='ll-icon'><File/></div>
                   <div className='ll-text'>One Pager</div>
-                  <Link href="/" className='ll-link'>
+                  <a href="/docs/cyborg-one-pager.pdf" target="_blank" className='ll-link'>
                       <ExternalLink/>
-                  </Link>
+                  </a>
                 </div>
               </div>
               </div>
@@ -348,9 +348,9 @@ export default function Home() {
                 <div className='ll-box'>
                   <div className='ll-icon'><File/></div>
                   <div className='ll-text'>Lite Paper</div>
-                  <Link href="/" className='ll-link'>
+                  <a href="/docs/cyborg-lite-paper-v1.pdf" target="_blank" className='ll-link'>
                       <ExternalLink/>
-                  </Link>
+                  </a>
                 </div>
               </div>
               </div>
