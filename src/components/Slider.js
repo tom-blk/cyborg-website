@@ -17,6 +17,8 @@ import dy from '../../public/images/partners/dy.svg'
 import cd from '../../public/images/partners/cd.svg'
 import yh from '../../public/images/partners/yh.svg'
 import nd from '../../public/images/partners/nd.svg'
+import aws from '../../public/images/backers/aws.png'
+import ms from '../../public/images/backers/ms.png'
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -114,4 +116,40 @@ function Partner() {
     );
   }
 
-  export {Tesimonial, Partner};
+  const ResponsiveOne = {
+    0: {
+      items: 2,
+      dots: false
+    },
+    480: {
+      items: 3,
+      dots: false
+    },
+    640: {
+      items: 4,
+      dots: false
+    },
+    768: {
+      items: 5,
+      dots: false
+    },
+    1024: {
+      items: 6,
+      dots: false
+    }
+  }
+  
+  function Backer() {
+      return (
+        <OwlCarousel responsive={ResponsiveOne} className='owl-theme' autoplay items={6} smartSpeed={3000} autoplayTimeout={3000}>
+          <div className="ps-content">
+            <a href="https://aws.amazon.com/what-is-cloud-computing"><Image src={aws} alt="AWS"/></a>
+          </div>
+          <div className="ps-content">
+            <Image src={ms} alt="Microsoft"/>
+          </div>
+        </OwlCarousel>
+      );
+    }
+
+  export {Tesimonial, Partner, Backer};

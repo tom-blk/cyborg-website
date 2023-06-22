@@ -60,6 +60,7 @@ body{
   font-weight: var(--regular);
   color: var(--text-light-87);
   background-color: var(--bg-body);
+  min-height: 100vh;
 }
 form *{
   font-family: var(--accord);
@@ -457,6 +458,9 @@ background: linear-gradient(160deg, rgba(1, 218, 99, 0.5), rgba(1, 218, 99, 0) 2
 .custom-owl-dots .owl-theme .owl-dots{
   margin: -20px 0 0 0 !important;
 }
+.about-hero-section .custom-owl-dots .owl-theme .owl-dots{
+  margin-top: 10px !important;
+}
 .ts-content{
   display: flex;
   padding: 30px;
@@ -775,6 +779,7 @@ footer{
 .arc-img{
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
 }
 .sh-wrap{
   width: 100%;
@@ -1072,6 +1077,19 @@ footer{
   border: 1px solid rgba(46, 210, 115, 0.5);
   transition: all 0.5s ease-in-out;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover, 
+textarea:-webkit-autofill:focus {
+  caret-color: var(--text-light-74);
+  color: var(--text-light-87);
+  -webkit-text-fill-color: var(--text-light-87);
+  border-color:rgb(42 127 78);
+  outline: none;
+  -webkit-box-shadow: 0 0 0px 40rem var(--bg-overlay) inset;
+}
 .cw-submit{
   border: none;
   outline: none;
@@ -1086,6 +1104,9 @@ footer{
 .cw-submit:hover{
   background: var(--bg-btn-hover);
   transition: all 0.5s ease-in-out;
+}
+.cw-submit:disabled{
+  pointer-events: none;
 }
 .learn-more-popup {
   display: flex;
@@ -1505,6 +1526,91 @@ filter: blur(75px);
 .headline,.testimonial-section, .partners-section{
   display: none;
 }
+.arc-mob{
+  display: none;
+}
+.owl-carousel .owl-stage{
+  margin: 0 auto;
+}
+.owl-carousel .owl-item img{
+  height: auto;
+}
+.mob-about{
+  display: none;
+}
+.form-toast{
+  display: inline-block;
+  position: fixed;
+  z-index: 8;
+  top: 20px;
+  right: 20px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  filter: drop-shadow(0 10px 25px #101311);
+  transition: all 0.5s ease-in;
+}
+.form-toast.d-none{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.25s ease-in;
+}
+.form-toast p{
+  padding: 15px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-green);
+  display: inline-flex;
+  background: var(--bg-box);
+  clip-path: var(--clip-16);
+  min-width: 280px;
+}
+.form-toast p span{
+  margin-right: 3px;
+  display: inline-flex;
+}
+.form-toast.error p{
+  color: #f9415e;
+}
+.form-toast.error .box-clip {
+  background: linear-gradient(145deg, rgba(249, 65, 93, 0.75), rgba(1, 218, 99, 0), rgba(1, 218, 99, 0), rgba(249, 65, 93, 0.75));
+}
+.form-toast p span svg{
+  width: 30px;
+  height: 30px;
+}
+.form-toast.d-none p span svg{
+ visibility: hidden;
+ opacity: 0;
+}
+.form-toast p span svg:nth-child(2), .form-toast.error p span svg:nth-child(1){
+  display: none;
+}
+.form-toast.error p span svg:nth-child(2){
+  display: inline-block;
+}
+.footer-relative #fake-footer{
+  display: none;
+}
+.footer-relative footer{
+    position: relative;
+    bottom: 15px;
+}
+.flow-hidden{
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1541,6 +1647,12 @@ filter: blur(75px);
     font-size: 32px;
     margin-top: -8px;
     margin-bottom: 60px;
+}
+.footer-wrap {
+  padding: 116px 0 25px 0;
+}
+.nine-section, .contact-section{
+  padding-bottom: 40px;
 }
 .common-section {
   padding: 60px 0;
@@ -1644,6 +1756,15 @@ filter: blur(75px);
 @media(max-width: 991px){
   .common-section {
     padding: 40px 0;
+}
+.roadmap-bg:after {
+  height: 150vh;
+}
+.footer-wrap {
+  padding: 96px 0 25px 0;
+}
+.nine-section, .contact-section{
+  padding-bottom: 30px;
 }
 .center-hero-heading{
   margin-bottom: 40px;
@@ -1866,7 +1987,7 @@ header {
   border-bottom: none;
 }
 header.active{
-  height: 100vh;
+  height: 120vh;
   position: fixed;
   background: var(--bg-overlay);
   width: 100%;
@@ -1882,14 +2003,14 @@ header.active nav, header.active a.btn{
 }
 nav{
   width: 100%;
-  margin: 45px 0 30px 0;
+  margin: 45px 0 15px 0;
 }
 nav > ul{
   flex-direction: column;
 }
 .header-wrap ul li a{
   font-size: 20px;
-  padding: 15px;
+  padding: 12px 15px;
 }
 .header-wrap .btn{
   margin: 0 auto;
@@ -1918,6 +2039,15 @@ nav > ul{
 }
 .header-wrap .submenu ul li a{
   padding: 15px;
+}
+.aw-img{
+  margin: 0 auto;
+}
+.mob-about{
+  display: block;
+}
+.web-about{
+  display: none;
 }
 }
 @media (max-width: 640px) {
@@ -2110,6 +2240,18 @@ body {
 }
 .fw-content.fw-fourth{
   margin-bottom: 15px;
+}
+.arc-web{
+  display: none;
+}
+.arc-mob{
+  display: block;
+}
+.cw-field input, .cw-field textarea{
+  min-height: 64px;
+}
+.cw-submit{
+  height: 64px;
 }
 }
 @media (max-width: 360px){

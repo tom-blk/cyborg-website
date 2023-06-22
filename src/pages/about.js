@@ -10,9 +10,71 @@ import Link from 'next/link'
 import Linkedin from '@/components/icons/Linkedin'
 import Button from '@/components/Button'
 import AngleDown from '@/components/icons/AngleDown'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { motion } from "framer-motion"
+import { sendContactForm } from '@/lib/api'
+var $ = require("jquery");
+if (typeof window !== "undefined") {
+  window.$ = window.jQuery = require("jquery");
+}
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import dynamic from "next/dynamic";
+import Check from '@/components/icons/Check'
+import Cross from '@/components/icons/Cross'
 
-export default function Solution() {
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
+
+
+const initValues = { name:"", email:"", subject:"", message:"" }
+const initState = { error: "", values : initValues }
+
+export default function About() {
+
+  const [sucMsg, setSucMsg] = useState();
+
+  const [state, setState] = useState(initState);
+
+  const {values, error} = state;
+
+  const handleChange = ({target}) => setState((prev)=>({
+        ...prev,
+        values: {
+          ...prev.values,
+          [target.name] : target.value,
+        },
+  }));
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setState((prev) => ({
+        ...prev,
+        error:"",
+      }));
+      setSucMsg("");
+    },3000)
+  },[sucMsg,error])
+
+  const onSubmit = async(event) => {
+    event.preventDefault()
+    setState((prev) => ({
+      ...prev,
+    }));
+    try {
+      await sendContactForm(values);
+      setState(initState);
+      setSucMsg("Message sent sucessfully.")
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        error: error.message,
+      }));
+    }
+  };
+
+
 
   const [showClass, setShowClass] = useState("false");
   const [showClass1, setShowClass1] = useState("false");
@@ -25,17 +87,21 @@ export default function Solution() {
   const [showClass8, setShowClass8] = useState("false");
   const [showClass9, setShowClass9] = useState("false");
 
+
+
   return (
     <>
-      <Head>
+    <Head>
         <title>About | Cyborg Network</title>
         <meta name="description" content="Cyborg Network - An Untapped Market" />
       </Head>
 
-        <section className='common-section about-hero-section'>
+        <section className='common-section about-hero-section flow-hidden'>
           <div className='about-bg left-logo-bg'>
-        <div className='container'>
-        <h1 className="hero-heading center-hero-heading">About Us</h1>
+        <div className='container custom-owl-dots'>
+        <motion.h1 className="hero-heading center-hero-heading" viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>About Us</motion.h1>
+        <motion.div className='mob-about' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.25 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateX: 0 }}>
+        <OwlCarousel className='owl-theme' loop items={1} autoplay dots smartSpeed={1500} autoplayTimeout={5000}>
         <div className='about-wrap d-flex a-center'>
           <div className='d-left'>
           <div className='aw-left'>
@@ -81,6 +147,55 @@ export default function Solution() {
           </div>
           </div>
           </div>
+          </OwlCarousel>
+          </motion.div>
+          <div className='web-about'>
+          <div className='about-wrap d-flex a-center'>
+          <motion.div className='d-left' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.1 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className='aw-left'>
+          <Image src={Mission} className="aw-img" alt='Our Mission'/>
+          </div>
+          </motion.div>
+          <motion.div className='d-right' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.1 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className="aw-right">
+          <div className='aw-detail'>
+            <h2>Our Mission</h2>
+            <p>At Cyborg Network, our mission is to transform the way edge computing applications are developed and deployed by providing a decentralized and incentivized infrastructure platform that leverages Substrate-based blockchain technology. We aim to empower developers and businesses to harness the full potential of edge computing while maintaining the highest standards of data privacy and security.</p>
+          </div>
+          </div>
+          </motion.div>
+          </div>
+          <div className='about-wrap d-flex a-center d-reverse'>
+          <motion.div className='d-left' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.2 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className='aw-left'>
+          <Image src={Vision} className="aw-img" alt='Our Vision'/>
+          </div>
+          </motion.div>
+          <motion.div className='d-right' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.2 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className="aw-right">
+          <div className='aw-detail'>
+            <h2>Our Vision</h2>
+            <p>Our vision at Cyborg Network is to revolutionize the world of edge computing by creating a decentralized and incentivized infrastructure platform that enables developers and businesses to easily build and deploy cutting-edge applications. We strive to be the leading provider of blockchain-based solutions that allow businesses to harness the full potential of edge computing, while maintaining the highest levels of data privacy and security. Through innovation, collaboration, and a commitment to excellence, we aim to empower our clients to transform their industries and build a better future for all</p>
+          </div>
+          </div>
+          </motion.div>
+          </div>
+          <div className='about-wrap d-flex a-center'>
+          <motion.div className='d-left' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.3 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className='aw-left'>
+          <Image src={Values} className="aw-img" alt='Our Values'/>
+          </div>
+          </motion.div>
+          <motion.div className='d-right' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.3 }} initial={{ opacity: 0, translateX: 200 }} whileInView={{ opacity: 1, translateX: 0 }}>
+          <div className="aw-right">
+          <div className='aw-detail'>
+            <h2>Our Values</h2>
+            <p>Cyborg Network cultivates an entrepreneurial spirit that inspires initiative, independence, and informed decisions. Our commitment to excellence ensures world-class performance and high standards. Curiosity fuels our speedy learning in technological ventures. Our collaborative culture encourages transparent communication, candid feedback, and diversity. Guided by the Japanese concept of Ikigai, we intertwine passion and purpose, aligning our skills with societal needs—these values are our identity.</p>
+          </div>
+          </div>
+          </motion.div>
+          </div>
+          </div>
         </div>
         </div>
         </section>
@@ -88,9 +203,9 @@ export default function Solution() {
         <section className='common-section team-section right-blur right-logo-bg'>
         <div className='left-blur'>
           <div className='container'>
-          <h2 className="section-heading">Founding Team</h2>
+          <motion.h2 className="section-heading" viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>Founding Team</motion.h2>
           <div className='team-wrap'>
-            <div className='tw-content'>
+            <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='tw-box'>
                 <div className='tw-header'>
                   <div className='tw-img'>
@@ -109,8 +224,8 @@ export default function Solution() {
                   <p className='tw-desc'>Barath is an experienced entrepreneur who has a deep understanding of the technical challenges and opportunities in these areas and has significant experience in the blockchain sector. As a leader, he spearheads the team&apos;s vision and directs the overarching strategy of the Cyborg Network</p>
                 </div>
               </div>
-            </div>
-            <div className='tw-content'>
+            </motion.div>
+            <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='tw-box'>
                 <div className='tw-header'>
                   <div className='tw-img'>
@@ -129,8 +244,8 @@ export default function Solution() {
                   <p className='tw-desc'>Kresna is a specialist in blockchain and decentralized systems, with notable expertise as a Rust/Substrate developer in various blockchain projects. After working with prominent tech companies, Kresna now oversees the development and execution of Cyborg Network&apos;s technological framework.</p>
                 </div>
               </div>
-            </div>
-            <div className='tw-content'>
+            </motion.div>
+            <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='tw-box'>
                 <div className='tw-header'>
                   <div className='tw-img'>
@@ -149,7 +264,7 @@ export default function Solution() {
                   <p className='tw-desc'>Megha has an impressive history in business development and operations, with experience spanning both startups and well-established companies. She is responsible for managing daily operations, forging partnerships, and ensuring the continued growth and success of the Cyborg Network.</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
           </div>
           </div>
@@ -157,10 +272,10 @@ export default function Solution() {
 
         <section className='common-section faq-section static-border middle-blur' id='faq'>
           <div className='container'>
-          <h2 className="section-heading">FAQ</h2>
+          <motion.h2 className="section-heading" viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>FAQ</motion.h2>
           <div className={`faq-wrap ${showClass ? "show-five" : "show-all"}`}>
             <div className='fw-list'>
-              <div className='fwl-content'>
+              <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
                 <div className={`fw-item ${showClass1 ? "" : "active"}`}>
@@ -173,8 +288,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
                 <div className={`fw-item ${showClass2 ? "" : "active"}`}>
@@ -187,8 +302,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass3 ? "" : "active"}`}>
@@ -201,8 +316,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass4 ? "" : "active"}`}>
@@ -215,8 +330,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass5 ? "" : "active"}`}>
@@ -229,8 +344,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass6 ? "" : "active"}`}>
@@ -243,8 +358,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.7 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass7 ? "" : "active"}`}>
@@ -257,8 +372,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.8 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass8 ? "" : "active"}`}>
@@ -271,8 +386,8 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
-                <div className='fwl-content'>
+                </motion.div>
+                <motion.div className='fwl-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.9 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='clip-wrap'>
               <div className='box-clip clip-border'></div>
               <div className={`fw-item ${showClass9 ? "" : "active"}`}>
@@ -285,41 +400,50 @@ export default function Solution() {
                   </div>
                 </div>
                 </div>
-                </div>
+                </motion.div>
             </div>
-            <div className='fw-list-btn'>
+            <div className='fw-list-btn' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 1 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <button onClick={() => setShowClass(!showClass)} type='button' className='btn btn-md'>{showClass ? "Show More" : "Show Less"}</button>
             </div>
           </div>
           </div>
         </section>
 
-        <section className='common-section contact-section left-blur right-logo-bg'>
+        
+<section className='common-section contact-section left-blur right-logo-bg'>
           <div className='container'>
-          <h2 className="section-heading">Contact Us</h2>
+          <motion.h2 className="section-heading" viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>Contact Us</motion.h2>
           <div className='contact-wrap'>
-            <div className='cw-form'>
-              <form>
+            <motion.div className='cw-form' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.75, delay: 0.25 }} initial={{ opacity: 0, translateY: 200 }} whileInView={{ opacity: 1, translateY: 0 }}>
+              <form method='post'>
                 <div className='cw-field'>
-                  <input type='text' name='fn-name' placeholder='Name'/>
+                  <input type='text' name='name' placeholder='Name' value={values.name} onChange={handleChange} required/>
                 </div>
                 <div className='cw-field'>
-                  <input type='email' name='fn-email' placeholder='Email'/>
+                  <input type='email' name='email' placeholder='Email' value={values.email} onChange={handleChange} required/>
                 </div>
                 <div className='cw-field'>
-                  <input type='text' name='fn-subject' placeholder='Subject'/>
+                  <input type='text' name='subject' placeholder='Subject' value={values.subject} onChange={handleChange} required/>
                 </div>
                 <div className='cw-field'>
-                  <textarea name='fn-message' placeholder='Message' rows="4"></textarea>
+                  <textarea name='message' placeholder='Message' rows="4" value={values.message} onChange={handleChange} required></textarea>
                 </div>
                 <div className='cw-btn'>
-                  <button type='submit' className='cw-submit'>Submit</button>
+                  <button type='submit' className='cw-submit' onClick={onSubmit} disabled={
+          !values.name || !values.email || !values.subject || !values.message
+        }>Submit</button>
                 </div>
               </form>
-            </div>
+            </motion.div>
           </div>
           </div>
         </section>
+        <div className={`form-toast ${error ? "error" : ""} ${error || sucMsg ? "" : "d-none"}`}>
+          <div className='clip-wrap'>
+          <div className='box-clip clip-border'></div>
+            <p><span><Check/><Cross/></span>{error}{sucMsg}</p>
+          </div>
+        </div>
     </>
   )
 }
