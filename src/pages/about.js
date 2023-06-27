@@ -100,7 +100,7 @@ export default function About() {
           <div className='about-bg left-logo-bg'>
         <div className='container custom-owl-dots'>
         <motion.h1 className="hero-heading center-hero-heading" viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 1 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>About Us</motion.h1>
-        <motion.div className='mob-about' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.25 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateX: 0 }}>
+        <div className='mob-about'>
         <OwlCarousel className='owl-theme' loop items={1} autoplay dots smartSpeed={1500} autoplayTimeout={5000}>
         <div className='about-wrap d-flex a-center'>
           <div className='d-left'>
@@ -148,7 +148,7 @@ export default function About() {
           </div>
           </div>
           </OwlCarousel>
-          </motion.div>
+          </div>
           <div className='web-about'>
           <div className='about-wrap d-flex a-center'>
           <motion.div className='d-left' viewport={{ once: true }} transition={{ type: "spring", bounce: 0.25, duration: 2, delay: 0.1 }} initial={{ opacity: 0, translateX: -200 }} whileInView={{ opacity: 1, translateX: 0 }}>
