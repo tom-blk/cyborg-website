@@ -20,7 +20,7 @@ import nd from '../../public/images/partners/nd.svg'
 import aws from '../../public/images/backers/aws.png'
 import ms from '../../public/images/backers/ms.png'
 import appchain from '../../public/images/programs/appchain.png'
-import polkadot from '../../public/images/programs/palkadot.png'
+import polkadot from '../../public/images/programs/polkadot.png'
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -161,7 +161,7 @@ function Programs() {
              <Image src={appchain} alt="Appchain"/>
           </div>
           <div className="ps-content">
-            <Image src={polkador} alt="Polkadot"/>
+            <Image src={polkadot} alt="Polkadot"/>
           </div>
         </OwlCarousel>
       );
