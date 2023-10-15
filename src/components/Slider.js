@@ -19,6 +19,8 @@ import yh from '../../public/images/partners/yh.svg'
 import nd from '../../public/images/partners/nd.svg'
 import aws from '../../public/images/backers/aws.png'
 import ms from '../../public/images/backers/ms.png'
+import appchain from '../../public/images/programs/appchain.png'
+import polkadot from '../../public/images/programs/palkadot.png'
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -152,4 +154,17 @@ function Partner() {
       );
     }
 
-  export {Tesimonial, Partner, Backer};
+function Programs() {
+      return (
+        <OwlCarousel responsive={ResponsiveOne} className='owl-theme' autoplay items={6} smartSpeed={3000} autoplayTimeout={3000}>
+          <div className="ps-content">
+             <Image src={appchain} alt="Appchain"/>
+          </div>
+          <div className="ps-content">
+            <Image src={polkador} alt="Polkadot"/>
+          </div>
+        </OwlCarousel>
+      );
+    }
+
+  export {Tesimonial, Partner, Backer, Programs};
