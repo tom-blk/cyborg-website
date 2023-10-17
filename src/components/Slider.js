@@ -21,6 +21,7 @@ import aws from '../../public/images/backers/aws.png'
 import ms from '../../public/images/backers/ms.png'
 import appchain from '../../public/images/programs/appchain.png'
 import polkadot from '../../public/images/programs/polkadot.png'
+import tdefi from '../../public/images/programs/tdefi.png'
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -158,10 +159,13 @@ function Programs() {
       return (
         <OwlCarousel responsive={ResponsiveOne} className='owl-theme' autoplay items={6} smartSpeed={3000} autoplayTimeout={3000}>
           <div className="ps-content">
-             <Image src={appchain} alt="Appchain"/>
+          <a href="https://www.tanssi.network/appchain-pioneers-program"><Image src={appchain} alt="Appchain"/></a>
           </div>
           <div className="ps-content">
-            <Image src={polkadot} alt="Polkadot"/>
+          <a href="https://www.polkadotglobalseries.com/incubator/"><Image src={polkadot} alt="Polkadot"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://tde.fi/acceleration-program-with-DMCC"><Image src={tdefi} alt="TDeFi"/></a>
           </div>
         </OwlCarousel>
       );
