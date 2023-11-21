@@ -55,7 +55,11 @@ const Footer = () => {
             <div className='fw-content fw-first'>
             <Logo/>
             <p className='fw-desc'>Our innovative platform leverages blockchain technology to revolutionize edge computing, offering a secure and scalable infrastructure designed to meet computing needs of the future.</p>
-            <ul className='social'>
+      <div className='fw-address'>
+            <h4>Address:</h4>
+            <p><strong>ResoluteX Labs</strong> 1111B S Governors Ave, ST #6950 Dover, Delaware 19904 United States</p> 
+            </div>      
+      <ul className='social'>
                 <li><Link href="https://twitter.com/Cyborg_network_"><Twitter/></Link></li>
                 <li><Link href="https://in.linkedin.com/company/cyborg-network"><Linkedin/></Link></li>
                 <li><Link href="https://t.me/CyborgNetworkOfficial"><Telegram/></Link></li>
