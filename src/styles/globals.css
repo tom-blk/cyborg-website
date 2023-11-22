@@ -669,17 +669,14 @@ footer{
   max-width: 360px;
   width: 100%;
 }
-.fw-address h4 {
-  color: var(--text-green);
-  font-weight: 500;
-  margin-bottom: 3px;
-  font-size: 17px;
-}
 .fw-address p{
   color: var(--text-light-74);
 }
 .fw-address p strong{
   color: var(--text-light-87);
+}
+.fw-address p span{
+  display: block;
 }
 .fw-desc{
   color: var(--text-light-74);
