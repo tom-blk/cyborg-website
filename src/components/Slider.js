@@ -172,7 +172,7 @@ function Programs() {
           <a href="https://www.hkweb3month.com/hackathon"><Image src={whx} alt="whx"/></a>
           </div>
           <div className="ps-content">
-          <a href="https://www.encode.club/polkadot-hackathon"><Image src={exp} alt="exp"/></a>
+          <a href="https://www.encode.club/encode-polkadot-accelerator-2023"><Image src={exp} alt="exp"/></a>
           </div>
           <div className="ps-content">
           <a href="https://polkadot.network/development/blockchain-academy/"><Image src={pba} alt="pba"/></a>
