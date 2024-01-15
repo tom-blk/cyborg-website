@@ -22,6 +22,10 @@ import ms from '../../public/images/backers/ms.png'
 import appchain from '../../public/images/programs/appchain.png'
 import polkadot from '../../public/images/programs/polkadot.png'
 import tdefi from '../../public/images/programs/tdefi.png'
+import whx from '../../public/images/programs/WHX.png'
+import exp from '../../public/images/programs/EXP.png'
+import pba from '../../public/images/programs/PBA.png'
+import bybit from '../../public/images/programs/BYBIT.png'
 
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
@@ -166,6 +170,18 @@ function Programs() {
           </div>
           <div className="ps-content">
           <a href="https://tde.fi/acceleration-program-with-DMCC"><Image src={tdefi} alt="TDeFi"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://www.hkweb3month.com/hackathon"><Image src={whx} alt="whx"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://www.encode.club/polkadot-hackathon"><Image src={exp} alt="exp"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://polkadot.network/development/blockchain-academy/"><Image src={pba} alt="pba"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://i.bybit.com/IabbYaT"><Image src={bybit} alt="bybit"/></a>
           </div>
         </OwlCarousel>
       );

@@ -531,11 +531,11 @@ background: linear-gradient(160deg, rgba(1, 218, 99, 0.5), rgba(1, 218, 99, 0) 2
   font-size: 12px;
 }
 .ps-content img{
-  opacity: 0.48;
+  opacity: 0.65;
   transition: all 0.5s ease-in;
 }
 .ps-content:hover img{
-  opacity: 0.74;
+  opacity: 1;
   transition: all 0.5s ease-in-out;
 }
 .footer-edge-wrap{
@@ -1549,6 +1549,21 @@ filter: blur(75px);
 }
 .owl-carousel .owl-item img{
   height: auto;
+}
+.programs-section .owl-carousel .owl-item .ps-content{
+  padding: 0 15px;
+}
+.programs-section .owl-carousel .owl-item .ps-content a{
+    width: 100%;
+    display: inline-block;
+    height: 80px;
+    margin: 0 15px;
+}
+.programs-section .owl-carousel .owl-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .mob-about{
   display: none;
