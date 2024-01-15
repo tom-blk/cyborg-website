@@ -181,14 +181,14 @@ export default function Home() {
           </div>
         </section>
 
-        <!--<section className='common-section backers-section right-blur'>
+        {/* <section className='common-section backers-section right-blur'>
           <div className='container'>
           <motion.h2 className="section-heading"  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}>Our Backers</motion.h2>
           <motion.div className='ps-slider-wrap custom-owl-dots'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}>
           <Backer/>
           </motion.div>
           </div>
-        </section>-->
+        </section> */}
 
         <section className='common-section programs-section right-blur'>
           <div className='container'>
