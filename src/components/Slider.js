@@ -169,9 +169,6 @@ function Programs() {
           <a href="https://www.polkadotglobalseries.com/incubator/"><Image src={polkadot} alt="Polkadot"/></a>
           </div>
           <div className="ps-content">
-          <a href="https://tde.fi/acceleration-program-with-DMCC"><Image src={tdefi} alt="TDeFi"/></a>
-          </div>
-          <div className="ps-content">
           <a href="https://www.hkweb3month.com/hackathon"><Image src={whx} alt="whx"/></a>
           </div>
           <div className="ps-content">
@@ -182,6 +179,12 @@ function Programs() {
           </div>
           <div className="ps-content">
           <a href="https://i.bybit.com/IabbYaT"><Image src={bybit} alt="bybit"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="#"><Image src={ms} alt="Microsoft"/></a>
+          </div>
+          <div className="ps-content">
+          <a href="https://tde.fi/acceleration-program-with-DMCC"><Image src={tdefi} alt="TDeFi"/></a>
           </div>
         </OwlCarousel>
       );
