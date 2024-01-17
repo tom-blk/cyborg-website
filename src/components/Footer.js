@@ -80,7 +80,8 @@ const Footer = () => {
                 <h6 className='fw-head'>Information</h6>
                 <ul className='fw-link'>
                     <li><Link href="/docs/cyborg-one-pager.pdf" target='_blank'>One Pager</Link></li>
-                    <li><Link href="/docs/cyborg-lite-paper-v1.pdf" target='_blank'>Lite Paper</Link></li>
+                    <li><Link href="/docs/cyborg-white-paper-v1.pdf" target='_blank'>White Paper</Link></li>
+                    {/* <li><Link href="/docs/cyborg-lite-paper-v1.pdf" target='_blank'>Lite Paper</Link></li> */}
                     <li><Link href="/about#faq">FAQ</Link></li>
                     {/* <li><Link href="/privacy-policy" className={`${router.asPath === "/privacy-policy" ? "active" : ""}`}>Privacy Policy</Link></li> */}
                     {/* <li><Link href="/term-of-use" className={`${router.asPath === "/term-of-use" ? "active" : ""}`}>Term of Use</Link></li> */}
