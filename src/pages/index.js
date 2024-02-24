@@ -70,8 +70,8 @@ export default function Home() {
 
         <section className='common-section six-section middle-blur left-logo-bg'>
           <div className='container'>
-          <motion.h2 className="section-heading"  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}><span>Unlock the Potential of the
-          </span>Edge with Decentralized Computing</motion.h2>
+          <motion.h2 className="section-heading"  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5 }} initial={{ opacity: 0, translateY: 100 }} whileInView={{ opacity: 1, translateY: 0 }}><span>Unlock peak performance and slash
+          </span>cloud expenses without migrating your setup</motion.h2>
           <div className='box-wrap'>
             <motion.div className='box-content'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
             <div className='clip-wrap'>
@@ -81,8 +81,8 @@ export default function Home() {
                   <Image src={sixOne} alt='Decentralized Infrastructure'/>
                 </div>
                 <div className='box-text'>
-                  <h3>Decentralized Infrastructure</h3>
-                  <p>Efficient and reliable processing with distributed control.</p>
+                  <h3>Strategic Middleware</h3>
+                  <p>Execute Low-Latency Tasks at the Edge While Your System Operates in Your Preferred Cloud Environment.</p>
                 </div>
                 </div>
               </div>

@@ -33,7 +33,7 @@ export default function Solution() {
           </div>
           <div className='sw-detail'>
             <h2>Our Solution</h2>
-            <p>At Cyborg, we are committed to providing a secure and decentralized infrastructure for edge computing that empowers businesses to leverage the full potential of the decentralized web. Our platform leverages blockchain technology to create an incentivized and efficient ecosystem for edge computing, enabling the secure exchange of data, and reducing the risk of data breaches.</p>
+            <p>At Cyborg, our dedication lies in delivering a secure edge computing infrastructure, enabling businesses to harness the complete capabilities of the decentralized web. Through our platform, which harnesses blockchain technology, we establish an incentivized and streamlined ecosystem for edge computing. This facilitates the secure exchange of data using robust cryptographic primitives and Zero-Knowledge (ZK) technology, thereby minimizing the likelihood of data breaches.</p>
           </div>
           </div>
           </motion.div>
@@ -133,14 +133,14 @@ export default function Solution() {
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'>
                   <div className='rw-detail-desc'><div className='clip-wrap'>
-              <div className='box-clip clip-border'></div><p><span>Q4 2023</span>Release of the Minimum Viable Product (MVP)</p></div></div>
+              <div className='box-clip clip-border'></div><p><span>Q4 2023</span>Growth Programs and legal setup</p></div></div>
                 </div>
                 </motion.div>
                 <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
                   <div className='rw-time'><h4>Q1 2024</h4></div>
                   <div className='rw-circle'><Circle/></div>
                   <div className='rw-detail'><div className='rw-detail-desc'><div className='clip-wrap'>
-              <div className='box-clip clip-border'></div><p><span>Q1 2024</span>Testing, Validation, and Documentation</p></div></div>
+              <div className='box-clip clip-border'></div><p><span>Q1 2024</span>MVP and testnet launch</p></div></div>
                 </div>
                 </motion.div>
                 <motion.div className='rw-item'  viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
