@@ -225,26 +225,6 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
-            <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
-              <div className='tw-box'>
-                <div className='tw-header'>
-                  <div className='tw-img'>
-                  <div className='clip-wrap'>
-                <div className='box-clip clip-border'></div>
-                    <Image src={Kresna} alt='Kresna'/>
-                    </div>
-                  </div>
-                  <div className='tw-info'>
-                    <h3>Kresna Sucandra</h3>
-                    <p>Founder & CTO</p>
-                    <Link href="https://id.linkedin.com/in/kresna-sucandra"><Linkedin/></Link>
-                  </div>
-                </div>
-                <div className='tw-body'>
-                  <p className='tw-desc'>Kresna is a specialist in blockchain and decentralized systems, with notable expertise as a Rust/Substrate developer in various blockchain projects. After working with prominent tech companies, Kresna now oversees the development and execution of Cyborg Network&apos;s technological framework.</p>
-                </div>
-              </div>
-            </motion.div>
             <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
               <div className='tw-box'>
                 <div className='tw-header'>
@@ -261,7 +241,27 @@ export default function About() {
                   </div>
                 </div>
                 <div className='tw-body'>
-                  <p className='tw-desc'>Megha has an impressive history in business development and operations, with experience spanning both startups and well-established companies. She is responsible for managing daily operations, forging partnerships, and ensuring the continued growth and success of the Cyborg Network.</p>
+                  <p className='tw-desc'>Megha has experience in leading operations for several blockchain projects and running community initiatives. She is the founder of Indi Verse DAO, a web 3.0 community focused on promoting blockchain education in india.</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div className='tw-content' viewport={{ once: true }} transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }} initial={{ opacity: 0, translateY: 50 }} whileInView={{ opacity: 1, translateY: 0 }}>
+              <div className='tw-box'>
+                <div className='tw-header'>
+                  <div className='tw-img'>
+                  <div className='clip-wrap'>
+                <div className='box-clip clip-border'></div>
+                    <Image src={Kresna} alt='Kresna'/>
+                    </div>
+                  </div>
+                  <div className='tw-info'>
+                    <h3>Kresna Sucandra</h3>
+                    <p>Co-Founder & CIO</p>
+                    <Link href="https://id.linkedin.com/in/kresna-sucandra"><Linkedin/></Link>
+                  </div>
+                </div>
+                <div className='tw-body'>
+                  <p className='tw-desc'>Kresna is a specialist in blockchain and decentralized systems, with notable expertise as a Rust/Substrate developer in various blockchain projects. After working with prominent tech companies, Kresna now oversees the development and execution of Cyborg Network&apos;s technological framework.</p>
                 </div>
               </div>
             </motion.div>
