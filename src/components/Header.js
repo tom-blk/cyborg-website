@@ -37,7 +37,7 @@ const Header = () => {
                 </li>
             </ul>
         </nav>
-        <Button onClick={()=>setToggle(!toggle)} title="Join Now" link="https://t.me/CyborgNetworkOfficial" size="btn-md"/>
+        <Button onClick={()=>setToggle(!toggle)} title="Register Interest" link="https://docs.google.com/forms/d/e/1FAIpQLScRglKnzT3ZCHkG8KL7yDC0oOfBZlqA0isnPe-oEtuHDDINDA/viewform?usp=sf_link" size="btn-md"/>
         <div className={`toggle-menu ${toggle ? "" : "active"}`} onClick={()=>setToggle(!toggle)}>
             <div className='toggle-wrap'>
                 <span></span>
