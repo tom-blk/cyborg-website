@@ -166,7 +166,7 @@ function Partner() {
           <a href="https://www.tanssi.network/appchain-pioneers-program"><Image src={appchain} alt="Appchain"/></a>
           </div>
           <div className="ps-content">
-          <a href="https://www.polkadotglobalseries.com/incubator/"><Image src={polkadot} alt="Polkadot"/></a>
+          <a href="https://www.polkadotglobalseries.com/incubator/"><img src="/images/programs/polkadot.png" alt="Polkadot"/></a>
           </div>
           <div className="ps-content">
           <a href="https://www.hkweb3month.com/hackathon"><Image src={whx} alt="whx"/></a>
