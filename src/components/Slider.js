@@ -159,7 +159,7 @@ function Partner() {
       );
     }
 
-function Programs() {
+  function Programs() {
       return (
         <OwlCarousel responsive={ResponsiveOne} className='owl-theme' autoplay items={6} smartSpeed={3000} autoplayTimeout={3000}>
           <div className="ps-content">
