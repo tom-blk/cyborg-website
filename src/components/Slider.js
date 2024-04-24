@@ -169,7 +169,7 @@ function Partner() {
           <a href="https://www.polkadotglobalseries.com/incubator/"><Image src={polkadot} alt="Polkadot"/></a>
           </div>
           <div className="ps-content">
-          <a href="https://www.hkweb3month.com/hackathon"><img src={whx} alt="whx"/></a>
+          <a href="https://www.hkweb3month.com/hackathon"><Image src={whx} alt="whx"/></a>
           </div>
           <div className="ps-content">
           <a href="https://www.encode.club/encode-polkadot-accelerator-2023"><Image src={exp} alt="exp"/></a>
