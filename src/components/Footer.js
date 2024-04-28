@@ -61,7 +61,7 @@ const Footer = () => {
       <ul className='social'>
                 <li><Link href="https://twitter.com/Cyborg_network_"><Twitter/></Link></li>
                 <li><Link href="https://in.linkedin.com/company/cyborg-network"><Linkedin/></Link></li>
-                <li><Link href="https://t.me/CyborgNetworkOfficial"><Telegram/></Link></li>
+                {/* <li><Link href="https://t.me/CyborgNetworkOfficial"><Telegram/></Link></li> */}
                 {/* <li><Link href="/"><Medium/></Link></li> */}
             </ul>
             </div>
