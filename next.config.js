@@ -12,6 +12,14 @@ const nextConfig = {
     );
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/demo/:path*',
+        destination: 'https://cyborg-connect-chi.vercel.app/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
