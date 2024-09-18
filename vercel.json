@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/demo/:path*",
-      "destination": "https://cyborg-connect-chi.vercel.app/:path*"
-    }
-  ]
-}
