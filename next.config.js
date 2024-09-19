@@ -12,13 +12,14 @@ const nextConfig = {
     );
     return config;
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: '/demo/:path*',
-        destination: 'https://cyborg-connect-chi.vercel.app/:path*',
+        source: '/demo',
+        destination: 'https://www.demo.cyborgnetwork.io/',
+        permanent: true,
       },
-    ];
+    ]
   },
 };
 
